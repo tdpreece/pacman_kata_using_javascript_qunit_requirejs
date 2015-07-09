@@ -1,0 +1,5 @@
+http://requirejs.org/docs/jquery.html
+Tool to make test suite out of several files https://github.com/JamesMGreene/qunit-composite
+jQuery optimizer.
+look into css3 and jquery translations.
+Use bower or npm to manage libraries?
