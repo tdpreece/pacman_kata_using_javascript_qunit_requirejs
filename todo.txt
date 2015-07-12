@@ -1,4 +1,5 @@
-http://requirejs.org/docs/jquery.html
+done - read http://requirejs.org/docs/jquery.html
+Look at waits in selenium because adding pacman after document.ready
 Tool to make test suite out of several files https://github.com/JamesMGreene/qunit-composite
 jQuery optimizer.
 look into css3 and jquery translations.
