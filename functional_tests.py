@@ -3,6 +3,7 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+
 class InitialPageLoadTests(unittest.TestCase):
     START_PAGE_URL = 'file:///home/tdpreece/javascript_projects/pacman_javascript_qunit_requirejs/index.html'
 
