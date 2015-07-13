@@ -20,7 +20,7 @@ class InitialPageLoadTests(unittest.TestCase):
             number_of_elements,
             1,
             "One element with id='{id}' expected, {number_of_elements} found."
-            .format(id=id,number_of_elements=number_of_elements)
+            .format(id=id, number_of_elements=number_of_elements)
         )
 
     def test_title_of_page_is_pacman(self):
