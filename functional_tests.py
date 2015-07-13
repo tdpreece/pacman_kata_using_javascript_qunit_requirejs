@@ -5,6 +5,8 @@ from selenium.webdriver.common.by import By
 
 
 class InitialPageLoadTests(unittest.TestCase):
+    IMPLICIT_WAIT_TIME = 2
+
     START_PAGE_URL = (
         'file:///home/tdpreece/javascript_projects/'
         'pacman_javascript_qunit_requirejs/index.html'
@@ -12,6 +14,7 @@ class InitialPageLoadTests(unittest.TestCase):
 
     def setUp(self):
         self.browser = webdriver.PhantomJS()
+        self.browser.implicitly_wait(self.IMPLICIT_WAIT_TIME)
 
     def assert_element_with_id_exists(self, id):
         elements = self.browser.find_elements(By.ID, id)
