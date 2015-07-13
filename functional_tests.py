@@ -31,6 +31,5 @@ class InitialPageLoadTests(unittest.TestCase):
         self.assertIn('PacMan', self.browser.title)
 
     def test_pacman_is_on_page(self):
-        self.browser = webdriver.PhantomJS()
         self.browser.get(self.START_PAGE_URL)
         self.assert_element_with_id_exists('pacman')
