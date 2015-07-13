@@ -5,7 +5,10 @@ from selenium.webdriver.common.by import By
 
 
 class InitialPageLoadTests(unittest.TestCase):
-    START_PAGE_URL = 'file:///home/tdpreece/javascript_projects/pacman_javascript_qunit_requirejs/index.html'
+    START_PAGE_URL = (
+        'file:///home/tdpreece/javascript_projects/'
+        'pacman_javascript_qunit_requirejs/index.html'
+    )
 
     def setUp(self):
         self.browser = webdriver.PhantomJS()
