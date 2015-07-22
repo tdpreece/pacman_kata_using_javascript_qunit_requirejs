@@ -4,3 +4,9 @@ Tool to make test suite out of several files https://github.com/JamesMGreene/qun
 jQuery optimizer.
 look into css3 and jquery translations.
 Use bower or npm to manage libraries?
+
+***
+- Use table for game board for now to not distract from requirejs and qunit
+- use a class to specify orientation of pacman
+
+
