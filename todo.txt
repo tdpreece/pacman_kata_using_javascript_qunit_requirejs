@@ -1,12 +1,14 @@
+*** Next Steps ***
+- test_pacman_moves_left_on seems like a good functional test to drive
+  me into the smaller components that will be needed ealy on, E.G.
+
+*** Keep in mind ***
+- Use table for game board for now to not distract from requirejs and qunit
+
+*** Technical things to look at ***
 done - read http://requirejs.org/docs/jquery.html
 done - Look at waits in selenium because adding pacman after document.ready
 Tool to make test suite out of several files https://github.com/JamesMGreene/qunit-composite
 jQuery optimizer.
 look into css3 and jquery translations.
 Use bower or npm to manage libraries?
-
-***
-- Use table for game board for now to not distract from requirejs and qunit
-- use a class to specify orientation of pacman
-
-
