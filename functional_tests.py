@@ -16,6 +16,7 @@ class InitialPageLoadTests(unittest.TestCase):
 
     def setUp(self):
         self.browser = webdriver.PhantomJS()
+        # self.browser = webdriver.Firefox()
         self.browser.implicitly_wait(self.IMPLICIT_WAIT_TIME)
 
     def assert_element_with_id_exists(self, id):
@@ -32,8 +33,10 @@ class InitialPageLoadTests(unittest.TestCase):
         self.browser.get(self.START_PAGE_URL)
         self.assertIn('PacMan', self.browser.title)
 
-    def test_pacman_is_on_page(self):
+    def test_pacman_is_on_gameboard(self):
         self.browser.get(self.START_PAGE_URL)
+        self.browser.find_element_by_css_selector('#pacman')
+        # self.browser.find_element(By.css_selector('#pacman'))
         self.assert_element_with_id_exists('pacman')
 
 
@@ -45,7 +48,8 @@ class PacmanMovementTests(unittest.TestCase):
     )
 
     def setUp(self):
-        self.browser = webdriver.PhantomJS()
+        self.browser = webdriver.Firefox()
+        # self.browser = webdriver.PhantomJS()
         self.browser.set_window_size(1024, 768)
         self.browser.implicitly_wait(self.IMPLICIT_WAIT_TIME)
 
@@ -54,11 +58,14 @@ class PacmanMovementTests(unittest.TestCase):
         pacman_start = self.browser.find_element_by_id('pacman')
         x_start = pacman_start.location['x']
         y_start = pacman_start.location['y']
-        game_grid = self.browser.find_element_by_id('game_grid')
-        game_grid.send_keys(Keys.ARROW_LEFT)
+        body = self.browser.find_element_by_css_selector('body')
+        body.send_keys(Keys.ARROW_LEFT)
         time.sleep(2)
         pacman_finish = self.browser.find_element_by_id('pacman')
         x_finish = pacman_finish.location['x']
         y_finish = pacman_finish.location['y']
-        self.assertTrue(x_start > x_finish)
+        self.assertTrue(
+            x_start > x_finish,
+            "x_start={0}, x_finish={1}".format(x_start, x_finish)
+        )
         self.assertEqual(y_start, y_finish)
