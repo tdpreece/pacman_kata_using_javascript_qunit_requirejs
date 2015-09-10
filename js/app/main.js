@@ -3,13 +3,16 @@ define(['jquery'], function (jquery) {
     jquery(document).ready(function () {
         jquery('#game_grid #1-2').html("<div id='pacman'>V</div>");
         jquery('body').on('keypress', function(event) {
-            var pacman = jQuery('#pacman')
-            pacman.remove()
+            var pacman = jQuery('#pacman');
+            var column = pacman.parent().index();
+            pacman.remove();
             if (event.keyCode == 37) {
-               jquery('#game_grid #1-1').append(pacman);
+                var destination_column = column - 1;
+                jquery('#game_grid tr:eq(0) td:eq(' + destination_column + ')').append(pacman);
             }
             else {
-               jquery('#game_grid #1-3').append(pacman);
+                var destination_column = column + 1;
+                jquery('#game_grid tr:eq(0) td:eq(2)').append(pacman);
             }
         })
     });
