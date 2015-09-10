@@ -69,3 +69,20 @@ class PacmanMovementTests(unittest.TestCase):
             "x_start={0}, x_finish={1}".format(x_start, x_finish)
         )
         self.assertEqual(y_start, y_finish)
+
+    def test_pacman_moves_right_on_right_button_click(self):
+        self.browser.get(self.START_PAGE_URL)
+        pacman_start = self.browser.find_element_by_id('pacman')
+        x_start = pacman_start.location['x']
+        y_start = pacman_start.location['y']
+        body = self.browser.find_element_by_css_selector('body')
+        body.send_keys(Keys.ARROW_RIGHT)
+        time.sleep(2)
+        pacman_finish = self.browser.find_element_by_id('pacman')
+        x_finish = pacman_finish.location['x']
+        y_finish = pacman_finish.location['y']
+        self.assertTrue(
+            x_start < x_finish,
+            "x_start={0}, x_finish={1}".format(x_start, x_finish)
+        )
+        self.assertEqual(y_start, y_finish)
